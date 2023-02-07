@@ -1,10 +1,35 @@
+nav {
+  background-color: var(--bs-body-bg);
+}
+
 .jumbotron {
   padding-top: 6rem;
   background-color: var(--bs-body-bg);
 }
 
+.jumbotron .rounded-circle {
+  background-color: var(--bs-gray);
+}
+
+#about {
+  background-color: rgb(236, 207, 170);
+}
+
 #projects {
   background-color: #e2edff;
+}
+
+#gallery {
+  background-color: rgb(236, 207, 170);
+}
+
+#contact {
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+}
+
+.text-dark {
+  color: var(--bs-black);
 }
 
 footer a {
@@ -26,4 +51,100 @@ section {
 /* artinya apapun yang ada didalam setelah row, maka ubah cssnya */
 #gallery .row > * {
   padding: 0;
+}
+
+/* My kamera section */
+.kamera-box {
+  position: relative;
+  background-color: #8c6efd;
+  border-radius: 10px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+
+/* untuk membuat watermark background text */
+.kamera-box::before {
+  content: "MY";
+  position: absolute;
+  color: #fff;
+  font-size: 6em;
+  font-weight: bold;
+  font-style: italic;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* ketika kamera-boxnya dihover maka elemen before akan terjadi seperti ini */
+.kamera-box:hover::before {
+  opacity: 0.2;
+}
+
+/* untuk membuat watermark background text */
+.kamera-box::after {
+  content: "KAMERA";
+  position: absolute;
+  color: #fff;
+  font-size: 4.3em;
+  font-weight: bold;
+  font-style: italic;
+  top: 350px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* ketika kamera-boxnya dihover maka elemen after akan terjadi seperti ini */
+.kamera-box:hover::after {
+  opacity: 0.2;
+}
+
+.kamera-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translate3d(0, 0, 50px);
+}
+
+/* cara baca: kamera-box dihover lalu kamera-name didalamnya */
+.kamera-box:hover .kamera-name {
+  top: 20px;
+  opacity: 1;
+}
+
+.kamera-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* cara baca: kamera-box dihover lalu kamera-detail-button didalamnya */
+.kamera-box:hover .kamera-detail-button {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.kamera-img {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate3d(-50%, -52%, 80px);
+  max-width: 350px;
+  transition: 0.5s;
+}
+
+/* cara baca: kamera-box dihover lalu kamera-img didalamnya */
+.kamera-box:hover .kamera-img {
+  transform: translate3d(-50%, -52%, 100px) rotate(5deg) scale(1.2);
 }
